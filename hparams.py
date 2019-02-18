@@ -9,13 +9,14 @@ hparams = tf.contrib.training.HParams(
 
   # Audio:
   num_mels=80,
-  num_freq=1025,
-  sample_rate=16000,
+  num_freq=2049,
+  sample_rate=48000,
   frame_length_ms=50,
   frame_shift_ms=12.5,
   preemphasis=0.97,
-  min_level_db=-100,
+  min_level_db=-120,
   ref_level_db=20,
+  max_frame_num=900,
 
   # Model:
   outputs_per_step=2,
@@ -39,7 +40,7 @@ hparams = tf.contrib.training.HParams(
   # Eval:
   max_iters=1000,
   griffin_lim_iters=60,
-  power=1.5,              # Power to raise magnitudes to prior to Griffin-Lim
+  power=1.2,              # Power to raise magnitudes to prior to Griffin-Lim
 
   #Global style token
   use_gst=True,     # When false, the scripit will do as the paper  "Towards End-to-End Prosody Transfer for Expressive Speech Synthesis with Tacotron"

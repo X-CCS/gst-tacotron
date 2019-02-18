@@ -58,6 +58,7 @@ def main():
   parser.add_argument('--mel_targets', default=None, help='Mel-targets path, used when use teacher_force generation')
   args = parser.parse_args()
   os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+  os.environ['CUDA_VISIBLE_DEVICES'] = '0'
   hparams.parse(args.hparams)
   run_eval(args)
 
